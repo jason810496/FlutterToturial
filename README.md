@@ -27,7 +27,7 @@ void main(){
 
 ## Variables 
 
-就像 `js` , `dart` 有支援動態型態 ( 不需要先指定好變數的型態 )
+就像 `js` , `dart` 有支援動態型態 ( 不需要先指定好變數的型態 ， 不過在 `Dart` 中 `var` 的用法與 `js` 有所差異，可見 [Detail Information](#detail-information) )
 ```dart
 var One = 1;
 var Name = 'John';
@@ -43,13 +43,50 @@ String Name = 'John';
 List<int> NumArray = [ 1, 2, 3 ];
 ```
 
+### Basic Variables Rules
+
+- 變數命名規則 : 
+
+- 初始化規則 : 
+
+### Keywords List
+
+### Important Concept of `Dart`
+
+- 在 `Dart` 中，所有東西都是**類別的實例** ( instance of a class )
+
+無論是 `int`、`bool`、`function` （ 連 `null` 自己也是一個 class ) 在 [Dart core library](https://api.dart.dev/stable/2.18.1/dart-core/Object-class.html) 可以看到所有 type 的 class 定義
+
+- `Sound null safety` 機制 （ 前面所提到的`初始化規則`中更詳細的內容 ）
+在 `2.12` 版本中，`Dart` 引進 `null safety` 機制（ 避免潛在的 `runtime error` ，使 IDE 能在 `edit-time` 就能檢查出來 ）
+
+所以所有的變數
+
+### Detail of Null safety
+
+[Understanding null safety](https://dart.dev/null-safety/understanding-null-safety#late-final-variables)
+[Practice of null safety syntax](https://dart.dev/codelabs/null-safety)
+
+
+
+### 
+
+
+
+
+### Detail Information 
+
+[Difference between `Object` , `var` and `dynamic` (StackOverFlow)](https://stackoverflow.com/questions/68570162/difference-between-object-dynamic-and-var-in-dart)
+
+### Summary of Variables
+
 ## Build-in types
 ### Numbers
 - `int`
 - `double`
 ### Strings
 - `String`
-### 
+### Booleans
 
 ## I/O
 ### Practice 
@@ -57,9 +94,12 @@ List<int> NumArray = [ 1, 2, 3 ];
 ### if/else Statement 
 #### Practice
 ### Loop
+#### For loops
+#### While loops
+#### Break and Continue 
 #### Practice 
-## Array 
 ## Function 
+## Data Structure
 
 
 ## Reference 
