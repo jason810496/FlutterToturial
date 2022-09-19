@@ -45,11 +45,70 @@ List<int> NumArray = [ 1, 2, 3 ];
 
 ### Basic Variables Rules
 
-- 變數命名規則 : 
+- **命名規則** 
+識別字 ( Identifier ) 也就是變數（ variable ）、函式 ( function )、類別 ( class ) 的名稱，而 Identifier 的命名也有一些要求：
 
-- 初始化規則 : 
+1. 不能以**數字開頭**
+```dart
+int 1One = 1;
+```
+2. 不能以 `-` **( 負號 )** 連接
+```dart
+int a-b-c = 10;
+```
+3. 不能是**保留字（ keywords ）**
+```dart
+int continue = 3;
+```
+所有的保留字可見：[Keywords List](https://dart.dev/guides/language/language-tour#keywords)
 
-### Keywords List
+以下是合法的變數名稱：
+```dart
+int NumberOne = 1;
+String my_name = 'Jason';
+double Pi314159 = 3.14159;
+```
+- **初始化規則**
+
+在 `C/C++` 中，這樣的程式是可以編譯的： （ 只是輸出結果是未初始化的變數 ）
+```c
+int main(){
+  int num;
+  printf("%d" , num );
+  return 0;
+}
+```
+如果換成 `Dart` 來寫：
+```c
+void main(){
+  int num;
+  printf( num );
+}
+```
+會發現無法編譯，因為 `Dart` 不允許程式存取未經過初始化的變數 （ 所有變數在未初始化前都是 `null` object ) 
+```
+line 3.The non-nullable local variable 'num' must be assigned before it can be used.
+```
+（ 用 `Dart` 改寫後的錯誤訊息 ）
+
+
+- 解決方法 ： 
+
+加上 `?` 在變數型態後方（ 讓該變數變成 `nullable` ）
+```dart
+void main(){
+  int? num;
+  printf( num );
+}
+```
+
+執行結果：
+```
+null
+```
+
+或是在每次宣告變數時都預先**初始化變數** （ 如：`int a = 0 ;` ）
+
 
 ### Important Concept of `Dart`
 
@@ -58,12 +117,13 @@ List<int> NumArray = [ 1, 2, 3 ];
 無論是 `int`、`bool`、`function` （ 連 `null` 自己也是一個 class ) 在 [Dart core library](https://api.dart.dev/stable/2.18.1/dart-core/Object-class.html) 可以看到所有 type 的 class 定義
 
 - `Sound null safety` 機制 （ 前面所提到的`初始化規則`中更詳細的內容 ）
-在 `2.12` 版本中，`Dart` 引進 `null safety` 機制（ 避免潛在的 `runtime error` ，使 IDE 能在 `edit-time` 就能檢查出來 ）
+在 `2.12` 版本中，`Dart` 引進 `sound null safety` 機制（ 避免潛在的 `runtime error` ，使 IDE 能在 `edit-time` 就能檢查出來 ）
 
 所以所有的變數
 
 ### Detail of Null safety
 
+[Understanding null safety](https://dart.dev/null-safety/understanding-null-safety)
 [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety#late-final-variables)
 [Practice of null safety syntax](https://dart.dev/codelabs/null-safety)
 
