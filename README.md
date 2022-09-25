@@ -137,12 +137,8 @@ void main(){
 
 不過在更複雜的流程控制中，`Dart` 的流程分析工具不一定能偵測出變數是否已經被賦予值，這會導致先前提過的[存取未初始化變數](https://dart.dev/tools/diagnostic-messages?utm_source=dartdev&utm_medium=redir&utm_id=diagcode&utm_content=not_assigned_potentially_non_nullable_local_variable#not_assigned_potentially_non_nullable_local_variable)錯誤 （ 這邊假設宣告方式是 `int num;` 而非 `int num=0;` 這種在宣告變數時已經初始化過的情況 ）
 
-
-
-
-
 ### final and const
-
+// 待補
 
 ### Important Concept of `Dart`
 
@@ -168,27 +164,130 @@ void main(){
 
 ### Summary of Variables
 
+- **變數命名規則**
+不要與 keywords 重複，不要以數字開頭，或是以 `-` 連接變數名稱
+- **初始化規則**
+在宣告變數時，順便設定初始值給變數
+
 ## Build-in types
 
 ### Numbers
 - `int`
+整數型態：可以存 `-2^63` 到 `2^63-1` 的整數
 - `double`
+浮點數： `1.234` , `3.14159` 
+
+```dart
+double Pi = 3.14;
+int BigNumber = 999999;
+```
 ### Strings
 - `String`
-### Booleans
+字串：可以用 `''`（單引號）或`""`（雙引號）包住要存的字串
 
+```dart
+String str1 = '123.124';
+String str2 = "a stands for apple";
+```
+### Booleans
+- `bool`
+布林值：專門用來表示 `true` 或 `false` 的型態
+```dart
+bool flag = false;
+List<int> arr = [ 1,2,3,4,5 ];
+for(int i=0;i<n;i++){
+  if( arr[i] == 3 ){
+    flag = true;
+  }
+}
+
+if( flag ){
+  // todo 1
+}
+else{
+  // todo 2
+}
+```
 ## I/O
+// todo 
 ### Practice 
 ## Flow Control
 ### if/else Statement 
+```dart
+if( status1 ){
+
+}
+else if( status2 ){
+
+}
+else{
+
+}
+```
+
 #### Practice
 ### Loop
 #### For loops
+```dart
+int n = 10;
+for(int i=0;i<n;i++){
+  print(i);
+}
+```
 #### While loops
+```dart
+int n=10;
+while()
+```
 #### Break and Continue 
+```dart
+List<int> arr = [1,2,3,4,5,6,7,8];
+for(int i=0;i<arr.length;i++){
+  if( arr[i] % 2 == 0){
+    continue;
+  }
+  else if( arr[i] == 5 ){
+    print( arr[i] );
+    break;
+  }
+}
+```
 #### Practice 
 ## Function 
+```dart
+void PrintElement(int num){
+  print( num );
+}
+
+int Two(int num){
+  return num<<1;
+}
+```
 ## Data Structure
+- **List**
+`Dart` 中的 List 就是其他程式語言中的 array 
+```dart
+List<int> arr = [1,2,3];
+var arr2 = [ 'john' , 'joe' , 'jef' ];
 
+```
+- **Set**
 
+```dart
+var names = <String>{};
+// Set<String> names = {}; // This works, too.
+// var names = {}; // Creates a map, not a set.
+```
+
+- **Map**
+```dart
+var gifts = {
+  // Key:    Value
+  'first': 'partridge',
+  'second': 'turtledoves',
+  'fifth': 'golden rings'
+};
+
+gifts['fourth'] = 'calling birds'; // Add a key-value pair
+```
 ## Reference 
