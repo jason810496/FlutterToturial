@@ -1,6 +1,7 @@
 # Quick Dart Toturial 
 
 - [Dart Pad](https://dartpad.dev/?) : 專門跑 `Dart` 的線上 IDE
+- [Replit](https://replit.com) : 線上的 IDE 可以跑各種語言，包括 `Dart` 
 - [Dart Doc Language Tour](https://dart.dev/guides/language/language-tour) : `Dart` 的官方文件
 
 ## Basic Dart Program 
@@ -24,6 +25,10 @@ void main(){
 
 這是一個
 ```
+
+## Compile Dart
+
+在 CLI 執行 `.dart` 檔案 ： `dart run FILE_NAME.dart`
 
 ## Variables 
 
@@ -217,13 +222,10 @@ else{
   // todo 2
 }
 ```
-## Compile Dart
-
-要如何在 CLI 來執行 `.dart` 檔案 ： `dart run FILE_NAME.dart`
 
 ## I/O
 
-這邊的 I/O 是 Console 的輸入輸出 ( Hint : Console I/O 在 [DartPad](https://dartpad.dev/?) 無法使用 )
+這邊的 I/O 是 Console 的輸入輸出 ( Hint : 如果是使用線上 IDE 的話，Console I/O 在 [DartPad](https://dartpad.dev/?) 無法使用，不過在 [Replit](https://replit.com) 可以正常使用 )
 
 必需要 import 的 library : `dart:io`
 
@@ -259,17 +261,25 @@ void main(List<String> args) {
 （ 為什麼要知道 Console I/O ? 在日後開始寫 APP 時可以方便 Debug ! ）
 ### Practice 
 ## Flow Control
-### if/else Statement 
+
+在 `Dart` 中的流程控制語法（ `if/else`,`for/while`,`break/continue` ）都與 `C/C++` , `JS` , `Java` 都相同：
+### if/else Statement
+
 ```dart
 if( status1 ){
-
+  // todo 1
 }
 else if( status2 ){
-
+  // todo 2
 }
 else{
-
+  // todo 3
 }
+```
+
+同樣的 `dart` 也有支援**三元運算子**：`( condition ? exprIfTrue : exprIfFalse )`
+```dart
+print( (a>b ? a:b) );
 ```
 
 #### Practice
@@ -282,9 +292,14 @@ for(int i=0;i<n;i++){
 }
 ```
 #### While loops
+
 ```dart
-int n=10;
-while()
+int l=0 ,r=10;
+while( l<=r ){
+  int mid = (l+r)/2;
+  if( check(mid) ) l=mid+1;
+  else r=mid-1;
+}
 ```
 #### Break and Continue 
 ```dart
@@ -300,7 +315,9 @@ for(int i=0;i<arr.length;i++){
 }
 ```
 #### Practice 
-## Function 
+## Function
+
+也與 `C/C++` 和 `JS` 相同，都是 `RETURN_TYPE FUNCTION_NAME(PARAMETERS){}` 的語法：
 ```dart
 void PrintElement(int num){
   print( num );
@@ -327,6 +344,9 @@ var names = <String>{};
 ```
 
 - **Map**
+
+`Dart` 中的 `Map` 相當於 `python` 中的 `dictionary` , 可以在初始化時建立好 key value pair , 也可以用 `MAP[KEY] = VALUE` 加入新 key value pair
+
 ```dart
 var gifts = {
   // Key:    Value
@@ -337,4 +357,7 @@ var gifts = {
 
 gifts['fourth'] = 'calling birds'; // Add a key-value pair
 ```
+
+#### Practice
+
 ## Reference 
