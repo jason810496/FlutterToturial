@@ -138,7 +138,16 @@ void main(){
 不過在更複雜的流程控制中，`Dart` 的流程分析工具不一定能偵測出變數是否已經被賦予值，這會導致先前提過的[存取未初始化變數](https://dart.dev/tools/diagnostic-messages?utm_source=dartdev&utm_medium=redir&utm_id=diagcode&utm_content=not_assigned_potentially_non_nullable_local_variable#not_assigned_potentially_non_nullable_local_variable)錯誤 （ 這邊假設宣告方式是 `int num;` 而非 `int num=0;` 這種在宣告變數時已經初始化過的情況 ）
 
 ### final and const
-// 待補
+
+用來宣告**不能被修改**的變數：
+```dart
+final a = "This is a final variable";
+const b = [ 1,2,4];
+```
+
+看起來與 `var` 和 `dynamic` 沒什麼差？（ **那我可以都用 `var` 就好了嗎？**
+
+答案是可以的！不過適當的使用 `final` 與 `const` 可以提升程式的健壯性，主要用來保護變數（ 例如該變數從頭到尾都不應該修改到時，就可以使用 `const` 宣告，來達到**健壯性**
 
 ### Important Concept of `Dart`
 
@@ -156,9 +165,9 @@ void main(){
 - [Understanding null safety](https://dart.dev/null-safety/understanding-null-safety)
 - [Practice of null safety syntax](https://dart.dev/codelabs/null-safety)
 
-
-
 ### Detail Information 
+
+關於 `var`,`dynamic`,`Object`,`final`,`const`,`late`的各種比較：
 
 [Difference between `Object` , `var` and `dynamic` (StackOverFlow)](https://stackoverflow.com/questions/68570162/difference-between-object-dynamic-and-var-in-dart)
 
@@ -208,8 +217,46 @@ else{
   // todo 2
 }
 ```
+## Compile Dart
+
+要如何在 CLI 來執行 `.dart` 檔案 ： `dart run FILE_NAME.dart`
+
 ## I/O
-// todo 
+
+這邊的 I/O 是 Console 的輸入輸出 ( Hint : Console I/O 在 [DartPad](https://dartpad.dev/?) 無法使用 )
+
+必需要 import 的 library : `dart:io`
+
+- 輸入：
+  - `stdin.readLineSync()`
+- 輸出：
+  - `print( var )`
+  - `stdout.write( var )`
+  - `stdout.writeln( var )`
+  - `stdout.writeAll( IterableObject )`
+
+**那要如何在字串中輸出變數？**
+
+在字串中的變數名稱前加上 `$` 符號 ：
+
+`print( "Age : $person_age" );`
+
+基本架構 ： 
+```dart
+import 'dart:io';
+
+void main(List<String> args) {
+  dynamic str = stdin.readLineSync();
+  print("Hi , my name is $str !");
+}
+```
+結果 : 
+```
+[ in] : 123
+[out] : Hi , my name is 123 !
+```
+
+（ 為什麼要知道 Console I/O ? 在日後開始寫 APP 時可以方便 Debug ! ）
 ### Practice 
 ## Flow Control
 ### if/else Statement 
