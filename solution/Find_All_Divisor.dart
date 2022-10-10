@@ -14,26 +14,11 @@ List<int> ReadIntList() {
   return Result;
 }
 
-bool IsPrime(int n) {
-  bool flag = true;
-  for (int i = 2; i * i <= n; i++) {
-    if (n % i == 0) {
-      flag = false;
-      break;
-    }
-  }
-
-  return flag;
-}
-
 void main(List<String> args) {
-  int t = ReadInt();
-  for (int i = 0; i < t; i++) {
     int n = ReadInt();
-    if (IsPrime(n)) {
-      stdout.writeln("YES");
-    } else {
-      stdout.writeln("NO");
+    for (int j = 1; j <= n; j++) {
+      if (n % j == 0) {
+        stdout.write("$j ");
+      }
     }
-  }
 }

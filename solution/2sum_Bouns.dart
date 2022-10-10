@@ -14,26 +14,23 @@ List<int> ReadIntList() {
   return Result;
 }
 
-bool IsPrime(int n) {
+void main(List<String> args) {
+  List<int> Input = ReadIntList();
+  int n = Input[0];
+  int k = Input[1];
+
+  List<int> arr = ReadIntList();
+  Set<int> st = {};
   bool flag = true;
-  for (int i = 2; i * i <= n; i++) {
-    if (n % i == 0) {
+
+  for (int i = 0; i < n; i++) {
+    int target = k - arr[i];
+    if (st.contains(target)) {
       flag = false;
       break;
     }
+    st.add(arr[i]);
   }
 
-  return flag;
-}
-
-void main(List<String> args) {
-  int t = ReadInt();
-  for (int i = 0; i < t; i++) {
-    int n = ReadInt();
-    if (IsPrime(n)) {
-      stdout.writeln("YES");
-    } else {
-      stdout.writeln("NO");
-    }
-  }
+  stdout.write((flag ? "NO" : "YES"));
 }

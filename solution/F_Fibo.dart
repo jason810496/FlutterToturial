@@ -14,26 +14,19 @@ List<int> ReadIntList() {
   return Result;
 }
 
-bool IsPrime(int n) {
-  bool flag = true;
-  for (int i = 2; i * i <= n; i++) {
-    if (n % i == 0) {
-      flag = false;
-      break;
-    }
-  }
+int RecursionFibo(int n) {
+  if (n <= 2) return 1;
+  return RecursionFibo(n - 1) + RecursionFibo(n - 2);
+}
 
-  return flag;
+int ArrayFibo(int n) {
+  List<int> arr = [1, 1];
+  for (int i = 2; i < n; i++) {
+    arr.add(arr[i - 1] + arr[i - 2]);
+  }
+  return arr.last;
 }
 
 void main(List<String> args) {
-  int t = ReadInt();
-  for (int i = 0; i < t; i++) {
-    int n = ReadInt();
-    if (IsPrime(n)) {
-      stdout.writeln("YES");
-    } else {
-      stdout.writeln("NO");
-    }
-  }
+  
 }
