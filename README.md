@@ -5,7 +5,7 @@
 - [Dart Doc Language Tour](https://dart.dev/guides/language/language-tour) : `Dart` 的官方文件
 
 
-**[Week 3 Exercise]()**
+**[Week 3 Exercise](https://github.com/jason810496/DartToturial/blob/master/Exercise.md)**
 
 ## Basic Dart Program 
 ```dart
