@@ -4,6 +4,9 @@
 - [Replit](https://replit.com) : 線上的 IDE 可以跑各種語言，包括 `Dart` 
 - [Dart Doc Language Tour](https://dart.dev/guides/language/language-tour) : `Dart` 的官方文件
 
+
+**[Week 3 Exercise]()**
+
 ## Basic Dart Program 
 ```dart
 void main() {

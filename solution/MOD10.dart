@@ -14,19 +14,16 @@ List<int> ReadIntList() {
   return Result;
 }
 
-int RecursionFibo(int n) {
-  if (n <= 2) return 1;
-  return RecursionFibo(n - 1) + RecursionFibo(n - 2);
-}
-
-int ArrayFibo(int n) {
-  List<int> arr = [1, 1];
-  for (int i = 2; i < n; i++) {
-    arr.add(arr[i - 1] + arr[i - 2]);
-  }
-  return arr.last;
-}
-
 void main(List<String> args) {
-  
+  int n = ReadInt();
+  List<int> counter = List<int>.filled(10, 0);
+
+  for (int i = 0, x; i < n; i++) {
+    x = ReadInt();
+    counter[x % 10]++;
+  }
+
+  for (int i = 0; i < 10; i++) {
+    stdout.write("${counter[i]}  ");
+  }
 }
