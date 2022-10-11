@@ -1,18 +1,19 @@
 import 'dart:io';
 
+int ReadInt() {
+  dynamic input;
+  input = stdin.readLineSync();
+  return int.parse(input);
+}
+
+List<int> ReadIntList() {
+  dynamic input;
+  input = stdin.readLineSync();
+  List<String> Line = input.split(' ');
+  List<int> Result = Line.map(int.parse).toList();
+  return Result;
+}
+
 void main(List<String> args) {
-  dynamic one = stdin.readLineSync();
-
-  int OneNum = int.parse(one);
-
-  print("This is a num : $OneNum ");
-
-  dynamic line = stdin.readLineSync();
-
-  List<String> splitted = line.split(' ');
-  List<int> NumList = splitted.map(int.parse).toList();
-
-  print(NumList);
-
-  print(NumList[1] - NumList[0]);
+ 
 }
