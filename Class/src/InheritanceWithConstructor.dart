@@ -11,6 +11,11 @@ class ChildClass extends ParentClass {
   }
 }
 
+
+
+
+
+
 class ParentClassWithProperties {
   String? status;
   ParentClassWithProperties() {
@@ -42,6 +47,7 @@ class ChildPara extends ParentPara {
 void main(List<String> args) {
   print("\n");
   ChildClass test = ChildClass();
-  print("-------------");
-  ChildClassWithProperties test2 = ChildClassWithProperties();
+  
+  // print("-------------");
+  // ChildClassWithProperties test2 = ChildClassWithProperties();
 }

@@ -9,9 +9,13 @@ class ParentClass {
   void ShowName() {
     print("Name : ${this.Name}");
   }
+
+  
 }
 
-class ChildClassOne extends ParentClass {}
+class ChildClassOne extends ParentClass {
+
+}
 
 class ChildClassTwo extends ParentClass {
   double? Rate;

@@ -38,9 +38,9 @@ class ChildClassTwo extends ParentClass {
 void main(List<String> args) {
   ChildClassOne c1 = ChildClassOne();
   c1.ShowName();
-  c1.ShowName2();
-  c1.PrintVal();
+  // c1.ShowName2();
+  // c1.PrintVal();
 
-  ChildClassTwo c2 = ChildClassTwo();
-  c2.ShowName();
+  // ChildClassTwo c2 = ChildClassTwo();
+  // c2.ShowName();
 }
