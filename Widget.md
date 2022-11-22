@@ -383,13 +383,17 @@ class _MyWidgetState extends State<MyWidget> {
 ## Widget , A bunch of Widgets
 
 這邊有各種 Widgets ( 按照功能或主題分類 ) 可以先大致瀏覽過再開始自己練習建 UI 看看
+
 [Widget catalog](https://docs.flutter.dev/development/ui/widgets)
 
 
 ## Some References
 
 [Widget Layout](https://docs.flutter.dev/development/ui/layout)
+
 [Advance Flutter](https://ithelp.ithome.com.tw/users/20134548/ironman/4459)
+
 [MaterialApp , WidgetApp Example & Troubleshooting](https://api.flutter.dev/flutter/material/MaterialApp-class.html)
+
 [Example of using `WidgetApp` to create App](https://gist.github.com/antronic/e4953ae41b2c15492d9be5a5e8c07bec)
 
