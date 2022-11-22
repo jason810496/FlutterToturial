@@ -1,3 +1,13 @@
 my_app_test_0
 .log
 .test
+ios
+android
+linux
+macos
+test
+web
+windows
+.metadata
+analysis_options.yaml
+*.lock
