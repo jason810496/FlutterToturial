@@ -306,6 +306,8 @@ return Center(
 
 在寫 Widget 時，大致上會依據**大到小**原則來寫，能以 Widget Tree 的思維來寫當然是最好的
 ![](https://i.imgur.com/DsYyWAM.png)
+
+不過還是有可能會不小心寫成這種超多階層的 Widget 
 ```dart
 ... 
                  date,
