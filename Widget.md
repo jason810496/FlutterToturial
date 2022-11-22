@@ -175,7 +175,7 @@ IDE 幫我們生成的 `MyWidget` 這個就是最基本的 Widget，我們可以
 
 應該會是整個 screen 都是白色的結果：
 
-[!]()
+![](https://i.imgur.com/aDNPldL.png)
 
 Flutter 中的各個 Widget 都有很多可以使用的 properties ( 用來改變大小形狀 ... etc )
 
@@ -205,7 +205,7 @@ class MyWidgetTest extends StatelessWidget {
 }
 ```
 為什麼結果是這樣？
-[!]()
+![](https://i.imgur.com/33sKTN5.png)
 
 ## Understaning Widget Constraints
 
@@ -226,7 +226,7 @@ class MyWidgetTest extends StatelessWidget {
   }
 ```
 結果會如下：
-[!]()
+![](https://i.imgur.com/neEQR3h.png)
 因為 screen 強制 `Center` 跟 screen 一樣大，所以 `Center` 充滿 screen 
 
 然後 `Center` 告訴 `Container` 可以變成任意大小但是不能超過 screen 的大小 ， 所以我們得到我們想的 100x100 的 `Container` 了 ! 
@@ -302,8 +302,10 @@ return Center(
 ## Think in Widget Tree
 
 如果我們想寫出這樣的 Widget : 
-( from )
+![](https://i.imgur.com/jBdemFo.png)
+
 在寫 Widget 時，大致上會依據**大到小**原則來寫，能以 Widget Tree 的思維來寫當然是最好的
+![](https://i.imgur.com/DsYyWAM.png)
 ```dart
 ... 
                  date,
@@ -355,8 +357,7 @@ App {
 └── main.dart
 ```
 
-- **Stateful Widget**
-
+## Stateful Widget
 
 有狀態的 Widget ( 動態的 Widget ， 會根據使用者狀態更新 )
 
